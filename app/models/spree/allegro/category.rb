@@ -1,7 +1,7 @@
 class Spree::Allegro::Category < ActiveRecord::Base
   belongs_to :parent, class_name: 'Spree::Allegro::Category', foreign_key: 'parent_id'
   has_many :children, class_name: 'Spree::Allegro::Category', foreign_key: 'parent_id'
-  has_many :store_items
+  has_many :store_variant_items
   acts_as_paranoid
 
   def full_path
