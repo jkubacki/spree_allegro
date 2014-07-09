@@ -1,4 +1,13 @@
 /*
 Placeholder manifest file.
 the installer will append this file to the app vendored assets here: 'vendor/assets/stylesheets/spree/backend/all.css'
+*= require jquery.ui.tabs
 */
+#allegro input[type="text"] {
+    max-width: 100%;
+}
+
+#allegro input {
+    margin-top:  5px;
+    margin-bottom: 5px;
+}

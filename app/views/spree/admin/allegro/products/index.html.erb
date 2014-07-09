@@ -1,0 +1,25 @@
+<h1>Listing spree_allegro_products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @spree_allegro_products.each do |spree_allegro_product| %>
+      <tr>
+        <td><%= link_to 'Show', spree_allegro_product %></td>
+        <td><%= link_to 'Edit', edit_spree_allegro_product_path(spree_allegro_product) %></td>
+        <td><%= link_to 'Destroy', spree_allegro_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_spree_allegro_product_path %>

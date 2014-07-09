@@ -1,3 +1,11 @@
-Spree::Core::Engine.routes.draw do
-  # Add your extension routes here
+Spree::Core::Engine.routes.append do
+
+  namespace :admin do
+    resources :products do
+      namespace :allegro do
+        resource :product
+      end
+    end
+  end
+
 end

@@ -1,0 +1,11 @@
+.nested-fields
+  = f.simple_fields_for :allegro_variant do |allegro_variant|
+    = render 'allegro_variant_fields', f: allegro_variant
+    #allegro-shop-variants-tabs
+      %ul
+        - f.object.allegro_store_variants.each do |store_variant|
+          %li= link_to raw(store_variant.store.name), "#store-variants-tabs-#{store_variant.id}"
+      = f.simple_fields_for :allegro_store_variants do |store_variant|
+        %div{id: "store-variant-tabs-#{store_variant.object.id}"}
+          Hello World
+          -#= render 'store_variant_fields', f: store_variant

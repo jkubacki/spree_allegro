@@ -1,3 +1,3 @@
 class Spree::Allegro::Product < ActiveRecord::Base
-  belongs_to :product, class_name: 'Spree::Product'
+  belongs_to :variant_auction_method
 end

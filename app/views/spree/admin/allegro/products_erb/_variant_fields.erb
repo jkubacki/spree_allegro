@@ -1,0 +1,9 @@
+<div class=".nested-fields">
+  <%= f.simple_fields_for :allegro_variant do |allegro_variant| %>
+      <%= render 'allegro_variant_fields', :f => allegro_variant %>
+  <% end %>
+  <%= f.simple_fields_for :allegro_store_variants do |store_variant| %>
+      <%= store_variant.object.store.name %>
+      <%= render 'store_variant_fields', :f => store_variant %>
+  <% end %>
+</div>

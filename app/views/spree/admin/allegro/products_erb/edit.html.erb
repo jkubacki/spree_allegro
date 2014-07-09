@@ -1,0 +1,25 @@
+<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
+
+<%= render :partial => 'spree/admin/shared/product_tabs', locals: {current: 'Allegro'} %>
+
+<div id="allegro2" data-hook></div>
+
+<div id="allegro">
+  <%= simple_form_for(@product, url: admin_product_allegro_product_path(product_id: @product.id), method: :patch) do |f| %>
+      <%= f.simple_fields_for :allegro_product do |allegro_product| %>
+          <%= render 'allegro_product_fields', :f => allegro_product %>
+      <% end %>
+      <div id="variants-tabs">
+        <ul>
+          <% @product.variants.each do |variant| %>
+            <li><a href="#variants-tabs-<%= variant.id %>"><%= variant.name %></a></li>
+          <% end %>
+        </ul>
+        <%= f.simple_fields_for :variants do |variant| %>
+            <div id="variants-tabs-<%= variant.object.id %>">
+                <%= render 'variant_fields', :f => variant %>
+            </div>
+        <% end %>
+      </div>
+  <% end %>
+</div>
