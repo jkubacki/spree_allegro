@@ -5,4 +5,5 @@ class Spree::Allegro::StoreProduct < ActiveRecord::Base
   belongs_to :shop_category
   belongs_to :panel
   belongs_to :theme
+  has_many :banners
 end
