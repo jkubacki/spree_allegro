@@ -5,5 +5,10 @@
 <div id="allegro" data-hook></div>
 
 <div>
-  Show Allegro
+  <%= @product.name  %>
+
+  <% @product.variants.each do |variant| %>
+    <p><%= variant.name %></p>
+  <% end %>
+
 </div>

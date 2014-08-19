@@ -52,7 +52,7 @@ class Spree::Admin::Allegro::ProductsController < Spree::Admin::BaseController
     def set_spree_allegro_product
       @product = Spree::Product.where("id = ? OR slug = ?", params[:product_id], params[:product_id]).first
       @spree_allegro_product = if @product.allegro_product.nil?
-         Spree::Allegro::Product.new
+         Spree::Allegro::Product.new(product: @product)
       else
         @product.allegro_product
       end
